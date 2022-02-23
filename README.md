@@ -51,8 +51,8 @@ Nesse projeto, você será capaz de:
 ## Data de entrega
 
   - Projeto obrigatório;
-  - Serão `X` dias de projeto.
-  - Data de entrega para avaliação final do projeto: `DD/MM/YYYY - 14:00h`.
+  - Serão `2` dias de projeto.
+  - Data de entrega para avaliação final do projeto: `04/03/2022 14:00`.
 
 ---
 
@@ -233,9 +233,9 @@ Para mais detalhes de como deve ocorrer a dinâmica, [consulte este material](TO
 
 1. Clone o repositório
 
-- `git clone git@github.com:tryber/sd-0x-inventory-report.git`.
+- `git clone git@github.com:tryber/sd-012-inventory-report.git`.
 - Entre na pasta do repositório que você acabou de clonar:
-  - `sd-0x-inventory-report`
+  - `sd-012-inventory-report`
 
 2. Crie o ambiente virtual para o projeto
 
@@ -276,13 +276,13 @@ Nota: após terminar o trabalho, para desativar o ambiente virtual digite `deact
 
 7. Crie um novo `Pull Request` _(PR)_
 
-- Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-inventory-report/pulls)
+- Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-012-inventory-report/pulls)
 - Clique no botão verde _"New pull request"_
 - Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
 - Clique no botão verde _"Create pull request"_
 - Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
 - **Não se preocupe em preencher mais nada por enquanto!**
-- Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-inventory-report/pulls) e confira que o seu _Pull Request_ está criado
+- Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-012-inventory-report/pulls) e confira que o seu _Pull Request_ está criado
 
 ---
 
@@ -533,7 +533,7 @@ Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus co
 
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
 
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-012`.
 
 Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
