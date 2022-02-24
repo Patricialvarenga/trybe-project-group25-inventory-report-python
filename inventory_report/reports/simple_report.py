@@ -91,33 +91,32 @@ data = [
     },
 ]
 
-import datetime
+from datetime import datetime
 
 
 class SimpleReport:
-    def __init__(self, data_list):
-        self.data = data_list
-
-    def generate(self):
+    @classmethod
+    def generate(cls, data):
         oldest_company = sorted(
-            self.data, key=lambda company: company["data_de_fabricacao"]
+            data, key=lambda company: company["data_de_fabricacao"]
         )
 
-        closest_date = sorted(
-            self.data, key=lambda company: company["data_de_validade"]
-        )
-
-        valid_dates = filter(
-            lambda closest: datetime.datetime.now()
-            >= datetime.datetime.strptime(
-                closest["data_de_validade"], "%Y-%m-%d"
-            ),
-            closest_date,
-        )
+        closest_date = str(
+            min(
+                [
+                    datetime.strptime(company["data_de_validade"], "%Y-%m-%d")
+                    for company in data
+                    if datetime.strptime(
+                        company["data_de_validade"], "%Y-%m-%d"
+                    )
+                    >= datetime.now()
+                ]
+            )
+        ).replace(" 00:00:00", "")
 
         max_products_in_stock = {}
 
-        for company in self.data:
+        for company in data:
             if company["nome_da_empresa"] not in max_products_in_stock:
                 max_products_in_stock[company["nome_da_empresa"]] = 1
             else:
@@ -129,9 +128,9 @@ class SimpleReport:
 
         return (
             f"Data de fabricação mais antiga: {oldest_company[0]['data_de_fabricacao']}\n"
-            f"Data de validade mais próxima: YYYY-MM-DD\n"
-            f"Empresa com maior quantidade de produtos estocados: {max_products_in_stock[-1][0]}"
+            f"Data de validade mais próxima: {closest_date}\n"
+            f"Empresa com maior quantidade de produtos estocados: {max_products_in_stock[-1][0]}\n"
         )
 
 
-print(SimpleReport(data).generate())
+# print(SimpleReport(data).generate())
