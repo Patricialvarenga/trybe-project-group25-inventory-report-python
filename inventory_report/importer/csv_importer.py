@@ -7,5 +7,5 @@ class CsvImporter(Importer):
         if not path.endswith("csv"):
             raise ValueError("Arquivo inválido")
 
-        with open(path, "r") as file:
+        with open(path) as file:
             return list(csv.DictReader(file))

@@ -50,11 +50,11 @@ class ReadXML:
 
 class Inventory:
     def import_data(path, report_type):
-        if path.endswith("json"):
-            return ReadJSON.toList(path, report_type)
-
-        if path.endswith("csv"):
-            return ReadCSV.toList(path, report_type)
-
-        if path.endswith("xml"):
-            return ReadXML.toList(path, report_type)
+        method = (
+            path.endswith("json")
+            and ReadJSON
+            or path.endswith("csv")
+            and ReadCSV
+            or ReadXML
+        )
+        return method.toList(path, report_type)
