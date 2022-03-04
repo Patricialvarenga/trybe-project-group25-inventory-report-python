@@ -24,10 +24,9 @@ class SimpleReport:
         stock = {}
 
         for company in data:
-            if company["nome_da_empresa"] not in stock:
-                stock[company["nome_da_empresa"]] = 1
-            else:
-                stock[company["nome_da_empresa"]] += 1
+            stock[company["nome_da_empresa"]] = (
+                stock.get(company["nome_da_empresa"], 0) + 1
+            )
 
         stock = sorted(stock.items(), key=lambda company: company[1])[-1][0]
 
@@ -36,6 +35,3 @@ class SimpleReport:
             f"Data de validade mais próxima: {closest_date}\n"
             f"Empresa com maior quantidade de produtos estocados: {stock}\n"
         )
-
-
-# print(SimpleReport(data).generate())
